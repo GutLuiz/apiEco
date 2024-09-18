@@ -1,8 +1,10 @@
-﻿namespace api.model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace api.model
 {
-    public class login
+    public class login 
     {
- 
+        [Key]
         public int idlogin { get; private set; }
         public string email { get; private set; }
 
