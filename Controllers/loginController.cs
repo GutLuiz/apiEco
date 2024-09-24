@@ -30,7 +30,7 @@ namespace api.Controllers
         {
             var login = _loginrepos.GET();
 
-            return Ok(login);   
+            return Ok(login);
         }
 
 
