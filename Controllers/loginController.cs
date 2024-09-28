@@ -47,7 +47,7 @@ namespace api.Controllers
             return Ok("Login realizado com sucesso");
         }
 
-        /*
+        
         // Método para obter informações (exemplo de GET):
         [HttpGet]
         public IActionResult Get()
@@ -55,6 +55,5 @@ namespace api.Controllers
             var login = _loginrepos.GET();
             return Ok(login);
         }
-        */
     }
 }

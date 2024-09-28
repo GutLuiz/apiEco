@@ -4,19 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api.infraestrutura
 {
-    public class Loginrepositorio : loginrepos
+    public class Loginrepositorio   :loginrepos
     {
         public void add(login loginn)
         {
             using (var conexao = new Conexaobd())
             {
                 conexao.login.Add(loginn);
-                conexao.SaveChanges(); // Deixe isso sem o try-catch para ver o erro completo
+                conexao.SaveChanges(); 
             }
 
 
         }
-
+        
         public List<login> GET()
         {
             using (var conexao = new Conexaobd())
@@ -24,11 +24,13 @@ namespace api.infraestrutura
                 return conexao.login.ToList();
             }
         }
+        
+
         public login GetByEmail(string email)
         {
             using (var conexao = new Conexaobd())
             {
-                return conexao.login.FirstOrDefault(u => u.email == email); // Ajuste aqui se necessário
+                return conexao.login.FirstOrDefault(u => u.email == email);
             }
         }
     }
