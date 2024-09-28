@@ -24,5 +24,12 @@ namespace api.infraestrutura
                 return conexao.login.ToList();
             }
         }
+        public login GetByEmail(string email)
+        {
+            using (var conexao = new Conexaobd())
+            {
+                return conexao.login.FirstOrDefault(u => u.email == email); // Ajuste aqui se necessário
+            }
+        }
     }
 }
