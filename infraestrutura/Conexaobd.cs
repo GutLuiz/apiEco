@@ -8,15 +8,7 @@ namespace api.infraestrutura
     {
         public DbSet<login> login { get; set; }
 
-        /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql(
-            "Server=Localhost;" +
-            "Port=5432;Database=eco;"+
-            "User id=postgres;" +
-            "Password=root;"
-            );
-        */
-
+        public DbSet<agendamento> agendamento {  get; set; }           
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder

@@ -4,6 +4,6 @@
     {
         void add(login loginn);
         List<login> GET();
-        login GetByEmail(string email); // Adiciona este método
+        login GetByEmail(string email); 
     }
 }

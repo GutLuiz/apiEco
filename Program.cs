@@ -21,7 +21,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<loginrepos, Loginrepositorio>();
+builder.Services.AddTransient<loginrepos, loginrepositorio>();
+builder.Services.AddTransient<agendamentorepos, agendaRepositorio>();
 
 var app = builder.Build();
 

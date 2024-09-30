@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api.infraestrutura
 {
-    public class Loginrepositorio   :loginrepos
+    public class loginrepositorio :loginrepos 
     {
         public void add(login loginn)
         {
@@ -33,5 +33,6 @@ namespace api.infraestrutura
                 return conexao.login.FirstOrDefault(u => u.email == email);
             }
         }
+
     }
 }
