@@ -1,24 +1,31 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace api.model
 {
     public class agendamento
     {
         [Key]
-
         public int idagendamento { get; set; }
+
+        [Required] // Validação para não permitir nulo
         public string nome { get; set; }
-        public string modelo_carro { get; set; }
-        public  string placa_carro { get; set; }
-        public DateTime? data_hora { get; set; }
 
+        [Required] // Validação para não permitir nulo
+        public string modelo { get; set; }
 
-        public agendamento( string nome, string modelo_carro, string placa_carro, DateTime? data_hora)
+        [Required] // Validação para não permitir nulo
+        public string placa { get; set; }
+
+        public DateTime data_hora { get; set; } // Data e hora do agendamento
+
+        // Construtor corrigido
+        public agendamento(string nome, string modelo, string placa, DateTime data_hora)
         {
             this.nome = nome ?? throw new ArgumentNullException(nameof(nome));
-            this.modelo_carro = modelo_carro ?? throw new ArgumentNullException(nameof(modelo_carro));
-            this.placa_carro = placa_carro ?? throw new ArgumentNullException(nameof(placa_carro));
-            this.data_hora = data_hora ?? throw new ArgumentNullException(nameof(data_hora));
+            this.modelo = modelo ?? throw new ArgumentNullException(nameof(modelo));
+            this.placa = placa ?? throw new ArgumentNullException(nameof(placa));
+            this.data_hora = data_hora; // A data é passada corretamente
         }
     }
 }

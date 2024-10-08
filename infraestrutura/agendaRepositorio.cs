@@ -1,27 +1,33 @@
 ﻿using api.model;
 
+
 namespace api.infraestrutura
 {
-    public class agendaRepositorio : agendamentorepos
-
+    public class agendarepositorio : agendamentorepos
     {
-
-        public void add(agendamento agenda)
+        // Implementação do método Add
+        public void add(agendamento agendamentoo)
         {
             using (var conexao2 = new Conexaobd())
             {
-                conexao2.agendamento.Add(agenda);
-                conexao2.SaveChanges();
+                
+                    conexao2.agendamento.Add(agendamentoo);
+                    conexao2.SaveChanges();
+                }
+               
             }
-        }
 
-        public List<agendamento> GET()
+        List<agendamento> agendamentorepos.GET()
         {
             using (var conexao2 = new Conexaobd())
             {
                 return conexao2.agendamento.ToList();
             }
         }
-
     }
-}
+
+        
+
+    
+    }
+

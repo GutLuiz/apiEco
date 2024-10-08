@@ -22,7 +22,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<loginrepos, loginrepositorio>();
-builder.Services.AddTransient<agendamentorepos, agendaRepositorio>();
+builder.Services.AddTransient<agendamentorepos,agendarepositorio>();
 
 var app = builder.Build();
 

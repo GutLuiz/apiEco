@@ -4,19 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api.infraestrutura
 {
-    public class loginrepositorio :loginrepos 
+    public class loginrepositorio : loginrepos
     {
         public void add(login loginn)
         {
             using (var conexao = new Conexaobd())
             {
                 conexao.login.Add(loginn);
-                conexao.SaveChanges(); 
+                conexao.SaveChanges();
             }
 
 
         }
-        
+
         public List<login> GET()
         {
             using (var conexao = new Conexaobd())
@@ -24,7 +24,7 @@ namespace api.infraestrutura
                 return conexao.login.ToList();
             }
         }
-        
+
 
         public login GetByEmail(string email)
         {
