@@ -8,24 +8,24 @@ namespace api.model
         [Key]
         public int idagendamento { get; set; }
 
-        [Required] // Validação para não permitir nulo
+        [Required] 
         public string nome { get; set; }
 
-        [Required] // Validação para não permitir nulo
+        [Required] 
         public string modelo { get; set; }
 
-        [Required] // Validação para não permitir nulo
+        [Required] 
         public string placa { get; set; }
 
-        public DateTime data_hora { get; set; } // Data e hora do agendamento
+        public DateTime data_hora { get; set; } 
 
-        // Construtor corrigido
+       
         public agendamento(string nome, string modelo, string placa, DateTime data_hora)
         {
             this.nome = nome ?? throw new ArgumentNullException(nameof(nome));
             this.modelo = modelo ?? throw new ArgumentNullException(nameof(modelo));
             this.placa = placa ?? throw new ArgumentNullException(nameof(placa));
-            this.data_hora = data_hora; // A data é passada corretamente
+            this.data_hora = data_hora; 
         }
     }
 }

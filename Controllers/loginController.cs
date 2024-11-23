@@ -15,7 +15,7 @@ namespace api.Controllers
             _loginrepos = loginrepos ?? throw new ArgumentNullException();
         }
 
-        // Método para adicionar (Registro)
+        
         [HttpPost("register")]
         public IActionResult add(loginViewModel loginView)
         {
@@ -24,31 +24,34 @@ namespace api.Controllers
             return Ok();
         }
 
-        // Método para login
+       
         [HttpPost("login")]
         public IActionResult Login([FromBody] loginViewModel loginView)
         {
-            // Busca o usuário pelo email
+            
             var user = _loginrepos.GetByEmail(loginView.email);
 
-            // Se o usuário não existir, retorna erro
+            
             if (user == null)
             {
                 return Unauthorized("E-mail ou senha inválidos");
             }
 
-            // Verifica se a senha fornecida corresponde à senha do banco de dados
-            if (user.senha != loginView.senha) // Lembre-se de usar hashing de senhas em produção
+            
+            if (user.senha != loginView.senha) 
             {
                 return Unauthorized("E-mail ou senha inválidos");
             }
 
-            // Retorna sucesso se as credenciais estiverem corretas
-            return Ok("Login realizado com sucesso");
+          
+            return Ok(new
+            {
+                status = "success",
+                email = user.email 
+            });
         }
 
-        
-        // Método para obter informações (exemplo de GET):
+
         [HttpGet]
         public IActionResult Get()
         {
